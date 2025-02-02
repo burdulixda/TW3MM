@@ -194,7 +194,7 @@ def fetchAllXmlKeys(file: str, filetext: str, mod: Mod) -> None:
 
 def fetchInputSettings(filetext: str) -> List[Key]:
     found = []
-    filetext = re.sub("r(\r\n+)|(\n+)", "\n", filetext)
+    filetext = re.sub(r"(\r\n+)|(\n+)", "\n", filetext)
     inputsettings = ''.join(INPUTPATTERN.findall(filetext))
     if (inputsettings):
         arr = list(filter(lambda s: s != '', inputsettings.split('\n')))
